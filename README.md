@@ -17,6 +17,15 @@ sh compile.sh
 ```
 One should change the CUDA path in compile.sh.
 
+Some common problems during compiling:
+- Make sure you change the CUDA path in compile.sh correctly.
+- Make sure you are using (and also compile under) tensorflow-gpu, not the cpu version of TF.
+- You may compile with other TF version. May need to modify the compile.sh. One can refer to the issues of pointnet2, PU-Net, MPU and PU-GAN.
+- Check the "libtensorflow_framework.so" in your tensorflow folder, if it is installed as "libtensorflow_framework.so.1", run this command:
+```
+ln -s  libtensorflow_framework.so.1  libtensorflow_framework.so
+```
+
 For any question regarding to the compiling, one can refer to the issues of pointnet2, PU-Net, MPU and PU-GAN.
 
 ### Datasets and pretrained model
