@@ -34,7 +34,7 @@ python main.py --phase train --up_ratio 4 --log_dir PUGeo_x4
 
 ### Evaluate performance
 ```
-python main.py --phase test --up_ratio 4 --pretrained PUGeo_x4/model/model-final --eval_xyz SketchFab/test
+python main.py --phase test --up_ratio 4 --pretrained PUGeo_x4/model/model-final --eval_xyz test_5000
 ```
 The upsampled xyz will be stored in PUGeo_x4/eval.
 
