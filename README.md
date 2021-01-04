@@ -47,4 +47,4 @@ python main.py --phase test --up_ratio 4 --pretrained PUGeo_x4/model/model-final
 ```
 The upsampled xyz will be stored in PUGeo_x4/eval.
 
-We thank the authors of pointnet2， PU-Net and MPU for their public code. 
+We thank the authors of pointnet2 PU-Net and MPU for their public code. 
