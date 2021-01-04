@@ -18,15 +18,15 @@ from tf_ops.sampling.tf_sampling import farthest_point_sample
 # argparse argument
 parser = argparse.ArgumentParser()
 parser.add_argument('--phase', default='train', help='train or test')
-parser.add_argument('--gpu',  default='3',  help='which gpu to use')
-parser.add_argument('--up_ratio',  type=int,  default=16,   help='Upsampling Ratio')
+parser.add_argument('--gpu',  default='0',  help='which gpu to use')
+parser.add_argument('--up_ratio',  type=int,  default=4,   help='Upsampling Ratio')
 parser.add_argument('--model', default='model_pugeo', help='Model for upsampling')
 parser.add_argument('--num_point', type=int, default=256,help='Point Number')
 
 # for phase train
-parser.add_argument('--log_dir', default='debug', help='Log dir [default: log]')
+parser.add_argument('--log_dir', default='PUGeo_x4', help='Log dir [default: log]')
 parser.add_argument('--batch_size', type=int, default=8, help='Batch Size during training')
-parser.add_argument('--max_epoch', type=int, default=1, help='Epoch to run')
+parser.add_argument('--max_epoch', type=int, default=400, help='Epoch to run')
 parser.add_argument('--learning_rate', type=float, default=0.001)
 parser.add_argument('--reg_normal1', type=float, default=1.0)
 parser.add_argument('--reg_normal2', type=float, default=1.0)
@@ -35,7 +35,7 @@ parser.add_argument('--jitter_max', type=float, default=0.03)
 
 #for phase test
 parser.add_argument('--pretrained', default='', help='Model stored')
-parser.add_argument('--eval_xyz', default='/home/qianyue/data/SketchFab/test_5000_normal_fixNum', help='Folder to evaluate')
+parser.add_argument('--eval_xyz', default='test_5000', help='Folder to evaluate')
 parser.add_argument('--num_shape_point', type=int, default=5000,help='Point Number per shape')
 parser.add_argument('--patch_num_ratio', type=int, default=3,help='Number of points covered by patch')
 FLAGS = parser.parse_args()
@@ -292,7 +292,7 @@ if __name__ == "__main__":
     LOG_FOUT.write(os.path.abspath(__file__) + '\n')
     LOG_FOUT.write(str(FLAGS) + '\n') 
 
-    FLAGS.train_record = '/home/qianyue/data/SketchFab/tfrecord_x%d_normal/*.tfrecord' % FLAGS.up_ratio
+    FLAGS.train_record = 'tfrecord_x%d_normal/*.tfrecord' % FLAGS.up_ratio
     FLAGS.num_patch = int(FLAGS.num_shape_point / FLAGS.num_point * FLAGS.patch_num_ratio)
 
     main(FLAGS)
