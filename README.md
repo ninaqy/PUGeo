@@ -32,7 +32,7 @@ https://drive.google.com/drive/folders/1n2lf4am9k3hy3ci4W20XiMkXwJKwyg8f?usp=sha
 python main.py --phase train --up_ratio 4 --log_dir PUGeo_x4
 ```
 
-### Evaluate performance
+### Inference (upsampling)
 ```
 python main.py --phase test --up_ratio 4 --pretrained PUGeo_x4/model/model-final --eval_xyz test_5000
 ```
