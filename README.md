@@ -1,8 +1,8 @@
 # PUGeo-Net: A Geometry-centric Network for 3D Point Cloud Upsampling
-- Paper: https://arxiv.org/abs/2002.10277
+This is the official Tensorflow implementation for paper: https://arxiv.org/abs/2002.10277
 
 ### Environment setting
-The code is implemented with CUDA=10.0, tensorflow=1.14, python=2.7.
+The code is implemented with CUDA=10.0, tensorflow=1.14, python=2.7. Other settings should also be ok.
 
 Other requested libraries: tqdm
 
@@ -15,9 +15,9 @@ sh compile.sh
 cd  tf_ops/sampling
 sh compile.sh
 ```
-One should change the CUDA path in compile.sh
+One should change the CUDA path in compile.sh.
 
-For any question regarding the compiling problem, one can refer to the issues of pointnet2, PU-Net, MPU and PU-GAN
+For any question regarding to the compiling, one can refer to the issues of pointnet2, PU-Net, MPU and PU-GAN.
 
 ### Datasets and pretrained model
 We provide x4 training dataset and pretrained model. Please download these files in the following link:
@@ -38,4 +38,4 @@ python main.py --phase test --up_ratio 4 --pretrained PUGeo_x4/model/model-final
 ```
 The upsampled xyz will be stored in PUGeo_x4/eval.
 
-We thank the author of pointnet, pointnet2， PU-Net and MPU for their public code. 
+We thank the authors of pointnet2， PU-Net and MPU for their public code. 
