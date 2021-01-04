@@ -51,7 +51,7 @@ def log_string(out_str):
     LOG_FOUT.flush()
 
 def build_path(log_path):
-    path = os.path.join('/home/qianyue/data/model/pugeo', log_path)
+    path = log_path
     model_path  = os.path.join(path, 'model')
     eval_path  = os.path.join(path, 'eval')
     if not os.path.exists(path):
