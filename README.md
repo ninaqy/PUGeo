@@ -25,9 +25,6 @@ Some common methods to fix bugs during compiling:
 ```
 ln -s  libtensorflow_framework.so.1  libtensorflow_framework.so
 ```
-
-For any question regarding to the compiling, one can refer to the issues of pointnet2, PU-Net, MPU and PU-GAN.
-
 ### Datasets and pretrained model
 We provide x4 training dataset and pretrained model. Please download these files in the following link:
 - training data (tfrecord_x4_normal.zip)
