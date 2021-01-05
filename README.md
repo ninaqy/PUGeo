@@ -7,6 +7,7 @@ The code is implemented with CUDA=10.0, tensorflow=1.14, python=2.7. Other setti
 Other requested libraries: tqdm
 
 ### Compile tf_ops
+One should change the CUDA path in tf_ops/CD/compile.sh and tf_ops/sampling/compile.sh. Then perform
 ```
 cd tf_ops/CD
 sh compile.sh
@@ -15,11 +16,9 @@ sh compile.sh
 cd  tf_ops/sampling
 sh compile.sh
 ```
-One should change the CUDA path in compile.sh.
-
 Some common methods to fix bugs during compiling:
 - Make sure you change the CUDA path in compile.sh correctly.
-- Make sure you are using (and also compil under) tensorflow-gpu, not the cpu version of TF.
+- Make sure you are using (and also compiling under) tensorflow-gpu, not the cpu version of TF.
 - You may compile with other TF version. May need to modify the compile.sh. One can refer to the issues of pointnet2, PU-Net, MPU and PU-GAN.
 - Delete previous .cu.o and so.so files and recompile again
 - Check the "libtensorflow_framework.so" in your tensorflow folder, if it is installed as "libtensorflow_framework.so.1", run this command:
