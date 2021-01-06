@@ -28,8 +28,8 @@ parser.add_argument('--log_dir', default='PUGeo_x4', help='Log dir [default: log
 parser.add_argument('--batch_size', type=int, default=8, help='Batch Size during training')
 parser.add_argument('--max_epoch', type=int, default=400, help='Epoch to run')
 parser.add_argument('--learning_rate', type=float, default=0.001)
-parser.add_argument('--reg_normal1', type=float, default=1.0)
-parser.add_argument('--reg_normal2', type=float, default=1.0)
+parser.add_argument('--reg_normal1', type=float, default=0.1)
+parser.add_argument('--reg_normal2', type=float, default=0.1)
 parser.add_argument('--jitter_sigma', type=float, default=0.01)
 parser.add_argument('--jitter_max', type=float, default=0.03)
 
