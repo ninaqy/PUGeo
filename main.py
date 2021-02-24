@@ -101,8 +101,9 @@ def main(arg):
     with tf.control_dependencies(gen_update_ops):
         train_op = tf.train.AdamOptimizer(arg.learning_rate,beta1=0.9).minimize(loss_all,var_list=gen_tvars, global_step=step)
     
-    # load data
-    dataloader = provider.Fetcher(arg.train_record, batch_size=arg.batch_size, step_ratio=arg.up_ratio, up_ratio=arg.up_ratio, num_in_point=arg.num_point, num_shape_point=arg.num_shape_point, jitter=True, drop_out=1.0, jitter_max=arg.jitter_max, jitter_sigma=arg.jitter_sigma)
+    if arg.phase == 'train':
+        # load training data
+        dataloader = provider.Fetcher(arg.train_record, batch_size=arg.batch_size, step_ratio=arg.up_ratio, up_ratio=arg.up_ratio, num_in_point=arg.num_point, num_shape_point=arg.num_shape_point, jitter=True, drop_out=1.0, jitter_max=arg.jitter_max, jitter_sigma=arg.jitter_sigma)
 
     # define ops
     ops = {'training_pl': training_pl,
