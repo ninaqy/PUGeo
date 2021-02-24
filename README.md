@@ -30,6 +30,7 @@ We provide x4 training dataset and pretrained model. Please download these files
 - training data (tfrecord_x4_normal.zip)
 - 13 testing models with 5000 points (test_5000.zip) 
 - pretrained x4 model (PUGeo_x4.zip) 
+- Training and testing meshes
 
 https://drive.google.com/drive/folders/1n2lf4am9k3hy3ci4W20XiMkXwJKwyg8f?usp=sharing
 
