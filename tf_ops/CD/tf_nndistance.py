@@ -57,6 +57,6 @@ if __name__=='__main__':
 			trainloss,_=sess.run([loss,train])
 			newt=time.time()
 			best=min(best,newt-t1)
-			print i,trainloss,(newt-t0)/(i+1),best
+			print(i,trainloss,(newt-t0)/(i+1),best)
 			t1=newt
 	
